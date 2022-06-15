@@ -15,9 +15,9 @@ var imagesData = require('../data/imageDatas.json');
 import Player from './music/player';
 
 // 歌名、歌手、播放URL等数据
-import {MUSIC_LIST} from '../data/musicDatas';
+import { MUSIC_LIST } from '../data/musicDatas';
 
-import {randomRange} from './utils/util';
+import { randomRange } from './utils/util';
 
 require('../styles/common.css');
 
@@ -390,10 +390,10 @@ class AppComponent extends React.Component {
         }
       }
       imgFigures.push(<ImgFigure data={value} key={index} ref={'imgFigure' + index}
-                                 arrange={this.state.imgArrangeArr[index]} inverse={this.inverse(index)}
-                                 center={this.center(index)}/>);
+        arrange={this.state.imgArrangeArr[index]} inverse={this.inverse(index)}
+        center={this.center(index)} />);
       controllerUnits.push(<ControllerUnit key={index} arrange={this.state.imgArrangeArr[index]}
-                                           inverse={this.inverse(index)} center={this.center(index)}/>);
+        inverse={this.inverse(index)} center={this.center(index)} />);
     }.bind(this));
 
     return (
@@ -407,14 +407,14 @@ class AppComponent extends React.Component {
         </nav>
 
         {/* 音乐相关的组件 */}
-        <div>
+        {/* <div>
           <Player/>
-        </div>
+        </div> */}
 
         {/* 源代码组件 */}
-        <div className="source-area">
+        {/* <div className="source-area">
           源代码：<a href="https://github.com/nnngu/MusicPhoto" target="_blank">https://github.com/nnngu/MusicPhoto</a>
-        </div>
+        </div> */}
 
       </section>
     );
