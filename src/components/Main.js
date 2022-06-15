@@ -249,49 +249,49 @@ class AppComponent extends React.Component {
     // let the first pic at center
     this.rearrange(0);
 
-    /** 播放音乐相关的 start */
+    // /** 播放音乐相关的 start */
 
-    $('#player').jPlayer({
-      supplied: 'mp3',
-      wmode: 'window',
-      useStateClassSkin: true
-    });
+    // $('#player').jPlayer({
+    //   supplied: 'mp3',
+    //   wmode: 'window',
+    //   useStateClassSkin: true
+    // });
 
-    this.playMusic(MUSIC_LIST[0]);
+    // this.playMusic(MUSIC_LIST[0]);
 
-    $('#player').bind($.jPlayer.event.ended, (e) => {
-      this.playWhenEnd();
-    });
-    PubSub.subscribe('PLAY_MUSIC', (msg, item) => {
-      this.playMusic(item);
-    });
-    PubSub.subscribe('DEL_MUSIC', (msg, item) => {
-      this.setState({
-        musicList: this.state.musicList.filter((music) => {
-          return music !== item;
-        })
-      });
-    });
-    PubSub.subscribe('PLAY_NEXT', () => {
-      this.playNext();
-    });
-    PubSub.subscribe('PLAY_PREV', () => {
-      this.playNext('prev');
-    });
-    let repeatList = [
-      'cycle',
-      'once',
-      'random'
-    ];
-    PubSub.subscribe('CHANAGE_REPEAT', () => {
-      let index = repeatList.indexOf(this.state.repeatType);
-      index = (index + 1) % repeatList.length;
-      this.setState({
-        repeatType: repeatList[index]
-      });
-    });
+    // $('#player').bind($.jPlayer.event.ended, (e) => {
+    //   this.playWhenEnd();
+    // });
+    // PubSub.subscribe('PLAY_MUSIC', (msg, item) => {
+    //   this.playMusic(item);
+    // });
+    // PubSub.subscribe('DEL_MUSIC', (msg, item) => {
+    //   this.setState({
+    //     musicList: this.state.musicList.filter((music) => {
+    //       return music !== item;
+    //     })
+    //   });
+    // });
+    // PubSub.subscribe('PLAY_NEXT', () => {
+    //   this.playNext();
+    // });
+    // PubSub.subscribe('PLAY_PREV', () => {
+    //   this.playNext('prev');
+    // });
+    // let repeatList = [
+    //   'cycle',
+    //   'once',
+    //   'random'
+    // ];
+    // PubSub.subscribe('CHANAGE_REPEAT', () => {
+    //   let index = repeatList.indexOf(this.state.repeatType);
+    //   index = (index + 1) % repeatList.length;
+    //   this.setState({
+    //     repeatType: repeatList[index]
+    //   });
+    // });
 
-    /** 播放音乐相关的 end */
+    // /** 播放音乐相关的 end */
 
   }
 
